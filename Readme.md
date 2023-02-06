@@ -15,6 +15,6 @@ The repository may also include build tools and other dependencies necessary for
 
 The MERN Stack provides a full-stack JavaScript development environment, allowing for a seamless workflow from front-end to back-end development. This makes it a popular choice for building scalable, production-ready web applications.
 
-Here i will teach everyone about MERM Stack development from basic to advance.
+Here i will teach everyone about MERN Stack development from basic to advance.
 
 Let's begin.
