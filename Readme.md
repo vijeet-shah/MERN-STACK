@@ -1,5 +1,7 @@
-# The MERN Stack is a collection of technologies used for building web applications. The acronym stands for:
+# MERN Stack
 
+The MERN Stack is a collection of technologies used for building web applications. 
+The acronym stands for :
 - MongoDB: A NoSQL database for storing and retrieving data
 - Express: A back-end web framework for building API's
 - React: A front-end JavaScript library for building user interfaces
