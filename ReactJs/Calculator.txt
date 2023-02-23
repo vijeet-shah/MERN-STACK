@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+Imports the React library and useState hook from the 'react' package.
+function Calculator() {
+Declares a functional component called Calculator.
+const [input, setInput] = useState('0');
+Uses the useState hook to create a state variable called 'input' and a function called 'setInput' to update the state variable. The initial value of the state variable is '0'.
+const [result, setResult] = useState(0);
+Uses the useState hook to create a state variable called 'result' and a function called 'setResult' to update the state variable. The initial value of the state variable is '0'.
+const handleClick = (value) => { ... }
+Declares a function called handleClick which takes in a value as a parameter. This function is called when any of the buttons are clicked.
+if (value === 'AC') { ... }
+Checks if the value passed to handleClick is 'AC'. If true, it sets the input state variable to '0' and the result state variable to 0.
+else if (value === '+/-') { ... }
+Checks if the value passed to handleClick is '+/-'. If true, it checks if the first character of the input state variable is '-'. If it is, it removes the '-' character. If it is not, it adds the '-' character.
+else if (value === '%') { ... }
+Checks if the value passed to handleClick is '%'. If true, it divides the input state variable by 100 and sets it as the new input value.
+else if (value === '=') { ... }
+Checks if the value passed to handleClick is '='. If true, it evaluates the input state variable using the eval() function, sets the result state variable to the result of the evaluation, and sets the input state variable to the result.
+else { ... }
+If none of the above conditions are true, it concatenates the value passed to handleClick to the input state variable.
+return ( ... )
+Returns the JSX code to be rendered.
+<div> ... </div>
+Renders a div containing the title of the calculator.
+<input type="text" value={input} readOnly />
+Renders an input field with the value set to the input state variable and readOnly property set to true.
+<div> ... </div>
+Renders a div containing the buttons for the first row of the calculator.
+<div> ... </div>
+Renders a div containing the buttons for the second row of the calculator.
+<div> ... </div>
+Renders a div containing the buttons for the third row of the calculator.
+<div> ... </div>
+Renders a div containing the buttons for the fourth row of the calculator.
+<div> ... </div>
+Renders a div containing the buttons for the fifth row of the calculator.
+<div> ... </div>
+Renders a div containing the result of the calculator.
+export default Calculator;
+Exports the Calculator component as the default export of the module.
