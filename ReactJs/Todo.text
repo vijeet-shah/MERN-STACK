@@ -1,0 +1,58 @@
+import React, { useState } from 'react';
+import NavBar from '../components/NavBar';
+
+
+function TodoList() {
+  /**const [inputValue, setInputValue] = useState('');: Declares the state variable inputValue and its corresponding setter function setInputValue using the useState hook. The initial value of inputValue is set to an empty string ''. */
+  
+  const [inputValue, setInputValue] = useState('');
+  //const [todos, setTodos] = useState([]);: Declares the state variable todos and its corresponding setter function setTodos using the useState hook. The initial value of todos is an empty array [].
+  
+  const [todos, setTodos] = useState([]);
+
+  //handleInputChange: Updates the inputValue state with the value entered in the input field.
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+/*handleAddTodo: Adds a new todo to the todos state array by appending the trimmed inputValue to the existing todos. It then resets the inputValue to an empty string.
+ */
+  const handleAddTodo = () => {
+    if (inputValue.trim() !== '') {
+      setTodos([...todos, inputValue.trim()]);
+      setInputValue('');
+    }
+  };
+/* handleDeleteTodo: Removes a todo from the todos state array based on the provided todoIndex. It filters out the todo at the specified index, creating a new array of todos without the deleted todo.
+*/
+  const handleDeleteTodo = (todoIndex) => {
+    const updatedTodos = todos.filter((todo, index) => index !== todoIndex);
+    setTodos(updatedTodos);
+  };
+
+  /**
+   * The return statement contains the JSX code that represents the component's UI.
+It includes an input field where the user can enter new todos (<input type="text" />).
+The value attribute of the input field is set to inputValue, binding the value of the input field to the inputValue state.
+The onChange event handler is set to handleInputChange, so whenever the input field value changes, the handleInputChange function will be called to update the inputValue state.
+There is a "Add Todo" button (<button onClick={handleAddTodo}>) that triggers the handleAddTodo function when clicked.
+The list of todos is rendered as an unordered list (<ul>) using the todos.map() method. Each todo item is rendered as a list item (<li>) with a corresponding "Delete" button. The handleDeleteTodo function is called with the index of the todo when the "Delete" button is clicked.
+The key prop is set to the index of each todo item to provide a unique identifier for React to efficiently render and update the list. */
+  return (
+    <div>
+    <NavBar/>
+      <h1>To-Do List</h1>
+      <input type="text" value={inputValue} onChange={handleInputChange} />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoList;
